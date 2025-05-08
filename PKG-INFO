@@ -1,0 +1,35 @@
+Metadata-Version: 2.4
+Name: test_pkg_tonyjustdevs
+Version: 0.0.5
+Summary: A small example package
+Project-URL: Homepage, https://github.com/tonyjustdevs/learning_pkging
+Project-URL: Issues, https://github.com/tonyjustdevs/learning_pkging/issues
+Author-email: Tony JustDevs <tonyjustdevs@gmail.com>
+License-Expression: MIT
+License-File: LICENSE
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Requires-Python: >=3.9
+Provides-Extra: dev
+Requires-Dist: build; extra == 'dev'
+Requires-Dist: twine; extra == 'dev'
+Description-Content-Type: text/markdown
+
+# Tony's Example Package
+
+[Tutorial Reference Link](https://packaging.python.org/en/latest/tutorials/packaging-projects/)
+
+# Notes for self:
+- git clone ... && cd ... && 
+- pip install -e . or pip install -e ".[dev]"
+- python -c "import my_package; print(my_package.__file__)"
+- git commit -am "Prepare release v..."
+- git tag -a v1.0.0 -m "Release v..."
+- git push origin main --tags
+- rm -rf dist
+- pip install build twine 
+- python -m build
+- twine upload -r testpypi dist/*
+- pip install dist/my_package-v0.0.0.whl
+- python -c "import my_package; print(my_package.__file__)
+- pip install -e .
